@@ -8795,7 +8795,8 @@ body {
 		overflow-x: hidden;
 		overflow-y: auto;
 		background-color: #0f0f38;
-		border-right: 2px solid cyan
+		border-right: 1px solid black;
+		box-shadow: 5px 10px 8px #888888;
 	}
 }
 
@@ -8873,6 +8874,7 @@ body {
 
 }
 
+
 .nav-sidebar>.active>a {
 	color: #0f0f38;
 	background-color: #bc9962
@@ -8891,6 +8893,7 @@ body {
 
 .nav-sidebar ul.ana-show.show{
     display: block;
+    
   
     
 }
@@ -8915,9 +8918,21 @@ body {
 /*tab in side the tab */
 .nav-sidebar li ul li a {
 
-       color: white;
-      
-      
+       color: white;     
+        
+}
+/*tab in side the tab new */
+.nav-sidebar li ul a li {
+        
+     
+       color: white;     
+        
+}
+
+.nav-sidebar li ul a li:hover,.nav-sidebar li ul a li:active {
+        
+        color: #bc9962;
+           
         
 }
 
@@ -21888,7 +21903,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
 
-  margin-right: 44px;
+  margin-right: 35px;
   margin-top: 3px;
   position: relative;
   display: block;
@@ -21947,7 +21962,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .dropbtn span{
     
-    
+ 
     padding-left: 1px;
 
 }
