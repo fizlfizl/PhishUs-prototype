@@ -8043,6 +8043,8 @@ button.close {
 .navbar-logo {
 	margin: 4px 0;
 	float: left
+	
+	
 }
 
 #navbar-login {
@@ -11193,8 +11195,8 @@ fieldset[disabled] .input-group-btn .btn-default:hover {
 .navbar-brand {
 	font-size: 24px;
 	line-height: 1.042;
-	font-weight: 700;
-	padding: 14px 21px
+	font-weight: 400;
+	padding-left: -22px;
 }
 
 .navbar-brand>[class*=fui-] {
