@@ -10,12 +10,13 @@
     <meta name="author" content="Jordan Wright (http://github.com/jordan-wright)">
     <link rel="shortcut icon" href="/images/favicon.ico">
 
-    <title>Gophish - {{ .Title }}</title>
+    <title>PhishUs - {{ .Title }}</title>
 
     <link href="/css/dist/gophish.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 
+<!--
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -52,9 +53,48 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
     </div>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/dist/vendor.min.js"></script>
+   
 </body>
+                -->
+
+<body class="body1"> 
+    <div id="particles-js"></div>
+    <script src="/js/dist/particles.min.js"></script> 
+    <script src="/js/dist/vendor.min.js"></script> 
+    
+</body>
+
+<div class="animated bounceInDown">
+  <div class="container1">
+    <span class="error animated tada" id="msg"></span>
+    <form class="box" action="" method="POST"> <!-- <form name="form1" class="box" onsubmit="return checkStuff()"> --> 
+      
+      <h4>Joushen<span>PhishUs</span></h4>
+        <img id="logo" src="/images/loginlogo.png" />
+      <h5>Sign in to your account.</h5>
+
+
+           <!-- <input type="text" name="username" class="form-control top-input" placeholder="Username" required autofocus>   -->
+           
+          <!--  <input type="password" name="password" class="form-control bottom-input" placeholder="Password" autocomplete="off" required> 
+            <input type="hidden" name="csrf_token" value="{{.Token}}" /> -->
+            
+            <input type="text" name="username" class="form-control top-input" placeholder="Username" required autofocus>
+            <i class="typcn typcn-eye" id="eye"></i>
+            <input type="password" name="password" class="form-control bottom-input" placeholder="Password" id="pwd" autocomplete="off" required>
+            <input type="hidden" name="csrf_token" value="{{.Token}}" />
+         
+            <button class="btn1" type="submit">Sign in</button>
+    
+  
+        <label>
+   
+        </label> 
+
+      </form>
+  </div> 
+  
+</div>
 
 </html>
 {{ end }}
