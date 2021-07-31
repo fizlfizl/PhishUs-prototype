@@ -133,6 +133,11 @@ func (as *AdminServer) registerRoutes() {
 	router.HandleFunc("/landing_pages", mid.Use(as.LandingPages, mid.RequireLogin))
 	router.HandleFunc("/sending_profiles", mid.Use(as.SendingProfiles, mid.RequireLogin))
 	router.HandleFunc("/training_videos", mid.Use(as.TrainingVideos, mid.RequireLogin))
+	router.HandleFunc("/awareness_manager", mid.Use(as.AwarenessManager, mid.RequireLogin))
+	router.HandleFunc("/manage_campaign", mid.Use(as.ManageCampaign, mid.RequireLogin))
+	router.HandleFunc("/published_campaign", mid.Use(as.PublishedCampaign, mid.RequireLogin))
+	router.HandleFunc("/question_bank", mid.Use(as.QuestionBank, mid.RequireLogin))
+	router.HandleFunc("/FeedbackForm", mid.Use(as.FeedbackForm, mid.RequireLogin))
 	router.HandleFunc("/settings", mid.Use(as.Settings, mid.RequireLogin))
 	router.HandleFunc("/users", mid.Use(as.UserManagement, mid.RequirePermission(models.PermissionModifySystem), mid.RequireLogin))
 	router.HandleFunc("/webhooks", mid.Use(as.Webhooks, mid.RequirePermission(models.PermissionModifySystem), mid.RequireLogin))
@@ -249,6 +254,41 @@ func (as *AdminServer) TrainingVideos(w http.ResponseWriter, r *http.Request) {
 	params := newTemplateParams(r)
 	params.Title = "Training Videos"
 	getTemplate(w, "training_videos").ExecuteTemplate(w, "base", params)
+}
+
+// AwarenessManager handles the default path and template execution
+func (as *AdminServer) AwarenessManager(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Awareness Manager"
+	getTemplate(w, "awareness_manager").ExecuteTemplate(w, "base", params)
+}
+
+// QuestionBank handles the default path and template execution
+func (as *AdminServer) QuestionBank(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Question Bank"
+	getTemplate(w, "question_bank").ExecuteTemplate(w, "base", params)
+}
+
+// ManageCampaign handles the default path and template execution
+func (as *AdminServer) ManageCampaign(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Manage Campaign"
+	getTemplate(w, "manage_campaign").ExecuteTemplate(w, "base", params)
+}
+
+// PublishedCampaign handles the default path and template execution
+func (as *AdminServer) PublishedCampaign(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Published Campaign"
+	getTemplate(w, "published_campaign").ExecuteTemplate(w, "base", params)
+}
+
+// FeedbackForm handles the default path and template execution
+func (as *AdminServer) FeedbackForm(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Feedback Form"
+	getTemplate(w, "FeedbackForm").ExecuteTemplate(w, "base", params)
 }
 
 // Settings handles the changing of settings

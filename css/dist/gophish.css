@@ -8768,7 +8768,7 @@ table.dataTable {
 }
 
 #password-strength-container {
-	height: 40px
+	height: 30px
 }
 
 body {
@@ -22111,7 +22111,6 @@ label span {
 
 .btn1 {
   border:0;
-
   background: #b4a062;/*#7f5feb #0f0f38*/
   color: #dfdeee;
   border-radius: 100px;
@@ -22124,6 +22123,21 @@ label span {
   transition: 0.3s;
   cursor: pointer;
 }
+
+.btn1_rest_pass{
+	border:0;
+	background: #b4a062;/*#7f5feb #0f0f38*/
+	color: #dfdeee;
+	border-radius: 100px;
+	width: 340px;
+	height: 49px;
+	font-size: 16px;
+	position: absolute;
+	top: 87%;
+	left: 16%;
+	transition: 0.3s;
+	cursor: pointer;
+  }
 
 .btn1:hover {
   background: #000000;
@@ -22208,6 +22222,10 @@ label span {
   margin: 0;
   top: 50px;
   left: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
@@ -22220,3 +22238,22 @@ label span {
   box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
 }
 
+.container_rest_pass{
+	margin: 0;
+	top: 50px;
+	left: 50%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	position: absolute;
+	text-align: center;
+	transform: translateX(-50%);
+	background-color: rgb(255, 255, 255);
+	border-radius: 9px;
+	border-top: 10px solid #b4a062;
+	  /* gold #b4a062*/
+	width: 500px;
+	height: 720px;
+	box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
+  }
