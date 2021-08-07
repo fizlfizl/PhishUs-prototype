@@ -60,6 +60,8 @@ func (as *Server) registerRoutes() {
 	router.Use(mid.EnforceViewOnly)
 	router.HandleFunc("/imap/", as.IMAPServer)
 	router.HandleFunc("/imap/validate", as.IMAPServerValidate)
+	router.HandleFunc("/training_videos", as.training_videos)
+	router.HandleFunc("/upload_video", as.upload_video)
 	router.HandleFunc("/reset", as.Reset)
 	router.HandleFunc("/campaigns/", as.Campaigns)
 	router.HandleFunc("/campaigns/summary", as.CampaignsSummary)
@@ -87,6 +89,7 @@ func (as *Server) registerRoutes() {
 	router.HandleFunc("/webhooks/{id:[0-9]+}/validate", mid.Use(as.ValidateWebhook, mid.RequirePermission(models.PermissionModifySystem)))
 	router.HandleFunc("/webhooks/{id:[0-9]+}", mid.Use(as.Webhook, mid.RequirePermission(models.PermissionModifySystem)))
 	as.handler = router
+	
 }
 
 func (as *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {

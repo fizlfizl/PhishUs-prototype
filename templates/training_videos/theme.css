@@ -1,0 +1,50 @@
+.body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+input#uploads {
+    display: none;
+}
+
+#previews > h4 {
+    text-align: center;
+}
+
+#previews > div {
+    position: relative;
+}
+
+#previews > div > h5 {
+    display: inline;
+    margin-left: 0.5em;
+}
+
+#previews > div > span:first-child {
+    float: right;
+    margin-right: 0.5em;
+}
+
+.thumbnail > img {
+    height: 200px;
+}
+
+.panel-heading > span {
+    float: right;
+    margin-left: 2em;
+}
+
+.panel-heading > span > input[type='checkbox'] {
+    margin-right: 0.5em;
+}
+
+.panel-heading > span > button {
+    margin-left: 2em;
+}
+
+.progress, .alert-danger {
+    width: 80%;
+    top: 35%;
+    left: 10%;
+    position: absolute;
+}

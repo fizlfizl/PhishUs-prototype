@@ -142,6 +142,8 @@ func (as *AdminServer) registerRoutes() {
 	router.HandleFunc("/users", mid.Use(as.UserManagement, mid.RequirePermission(models.PermissionModifySystem), mid.RequireLogin))
 	router.HandleFunc("/webhooks", mid.Use(as.Webhooks, mid.RequirePermission(models.PermissionModifySystem), mid.RequireLogin))
 	router.HandleFunc("/impersonate", mid.Use(as.Impersonate, mid.RequirePermission(models.PermissionModifySystem), mid.RequireLogin))
+	router.HandleFunc("/training_videos/upload_video", mid.Use(as.upload_video, mid.RequireLogin))
+	
 	// Create the API routes
 	api := api.NewServer(
 		api.WithWorker(as.worker),
@@ -289,6 +291,16 @@ func (as *AdminServer) FeedbackForm(w http.ResponseWriter, r *http.Request) {
 	params := newTemplateParams(r)
 	params.Title = "Feedback Form"
 	getTemplate(w, "FeedbackForm").ExecuteTemplate(w, "base", params)
+}
+
+// upload_video handles the default path and template execution
+
+func (as *AdminServer) upload_video(w http.ResponseWriter, r *http.Request) {
+	params := newTemplateParams(r)
+	params.Title = "Upload Video"
+	getTemplate(w, "/training_videos/upload_video").ExecuteTemplate(w, "base", params)
+	
+	
 }
 
 // Settings handles the changing of settings

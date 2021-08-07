@@ -13,7 +13,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// SendingProfiles handles requests for the /api/smtp/ endpoint
+// SendingProfiles handles requests for the /api/training_videos/ endpoint
 func (as *Server) training_videos(w http.ResponseWriter, r *http.Request) {
 	switch {
 	case r.Method == "GET":

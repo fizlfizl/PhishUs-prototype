@@ -1,0 +1,73 @@
+{{define "body"}}
+
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Styles 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="body"> 
+     
+      <div id="home" class="container" role="main">
+          <div class="well row">
+              <div class="col-xs-6 col-md-6">
+                  <h3>First</h3>
+                  <p>Click the button to select the files that you would like to upload.  Photo / Video uploader accepts the following formats: jpeg, mov, mp4.</p>
+                  <input id="uploads" type="file" multiple />
+                  <button id="uploadsBtn" type="button" class="btn btn-lg btn-primary">Select Files</button>
+              </div>
+              <div class="col-xs-6 col-md-6">
+                  <h3>Second</h3>
+                  <p>Click the button to upload your files to the server.</p>
+                  <button id="doUploads" type="button" class="btn btn-lg btn-default">Upload Files</button>
+              </div>
+          </div>
+          <div class="panel panel-default row">
+              <div class="panel-heading">
+                  <span>Total Upload Size: <span id="total">0 bytes</span><button id="clear" type="button" class="btn btn-xs btn-default">Clear</button></span>
+                  <span><input type="checkbox" id="showPreviews">Show Previews</input></span>
+                  <h3 class="panel-title">Uploads</h3>
+              </div>
+              <div id="previews" class="panel-body">
+                  <h6>No items selected</h6>
+              </div>
+          </div>
+      </div>
+
+      <div id="about" class="container" role="main" style="display: none">
+
+      </div>
+      <!-- /container -->
+ 
+{{end}}
+{{define "scripts"}}
+      <!-- Bootstrap core JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="/js/dist/app/VideoUpload.js"></script>
+      <script>
+          jQuery(document).ready(
+              function() {
+                  totalSizeManager.setup($('#total'))
+                  uploaderSelector.setup($('#previews'), $('#uploads'), $('#uploadsBtn'), $('#clear'), $('#showPreviews'))
+                  uploader.setup($('#doUploads'))
+                  pageSelector.setup($('#home'), $('#homeLink'), $('#about'), $('#aboutLink'))
+              })
+      </script>
+  </body>
+</html>
+{{end}}
